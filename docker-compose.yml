@@ -10,3 +10,7 @@ services:
     command: tail -f /dev/null
     volumes:
       - ./data:/root/data  # Mount thư mục để chia sẻ file
+    ports:
+      - "8080:8080"
+    labels:
+      shipyard.route: "/"
