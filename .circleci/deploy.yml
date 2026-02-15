@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  say-hello:
+    docker:
+      - image: ubuntu:22.04
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: |
+            echo Hello, World!
+            apt update && apt install -y nodejs
+            node -v
+
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
